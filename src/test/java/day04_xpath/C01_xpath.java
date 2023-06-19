@@ -19,10 +19,11 @@ public class C01_xpath {
 
         //1- https://the-internet.herokuapp.com/add_remove_elements/ adresine gidin
         driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
-Thread.sleep(2000);
+        Thread.sleep(2000);
 
         //2- Add Element butonuna basin
         driver.findElement(By.xpath("//button[@onclick='addElement()']")).click();
+
         //3- Delete butonu’nun gorunur oldugunu test edin
         WebElement deleteButonElementi= driver.findElement(By.xpath("//button[@onclick='deleteElement()']"));
 
@@ -32,6 +33,7 @@ Thread.sleep(2000);
             System.out.println("delete butonu gorunme testi FAILED");
         }
         Thread.sleep(2000);
+
         //4- Delete tusuna basin
         deleteButonElementi.click();
 

@@ -22,6 +22,7 @@ public class C02_Xpath_text {
 
         //2- Add Element butonuna basin
         driver.findElement(By.xpath("//*[text()='Add Element']")).click();
+
         //3- Delete butonu’nun gorunur oldugunu test edin
         WebElement deleteButonElementi= driver.findElement(By.xpath("//*[text()='Delete']"));
 
@@ -31,6 +32,7 @@ public class C02_Xpath_text {
             System.out.println("delete butonu gorunme testi FAILED");
         }
         Thread.sleep(2000);
+
         //4- Delete tusuna basin
         deleteButonElementi.click();
 

@@ -17,6 +17,7 @@ public class C04_RelativeLocators {
 
         //1 ) https://www.diemol.com/selenium-4-demo/relative-locators-demo.html  adresine gidin
         driver.get("https://www.diemol.com/selenium-4-demo/relative-locators-demo.html");
+
         //2 ) Berlin’i  3 farkli relative locator ile locate edin
         /*
             Berlin Webelementi'nin HTML kodlari

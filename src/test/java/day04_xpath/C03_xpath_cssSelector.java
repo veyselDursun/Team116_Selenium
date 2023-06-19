@@ -16,10 +16,13 @@ public class C03_xpath_cssSelector {
 
         //2-  https://www.amazon.com/ adresine gidin
         driver.get("https://www.amazon.com/");
+
         //3-  Browseri tam sayfa yapin
         driver.manage().window().maximize();
+
         //4-  Sayfayi “refresh” yapin
         driver.navigate().refresh();
+
         //5-  Sayfa basliginin “Spend less” ifadesi icerdigini test edin
         String actualTitle = driver.getTitle();
         String expectedIcerik = "Spend less";
@@ -30,15 +33,20 @@ public class C03_xpath_cssSelector {
             System.out.println("Amazon title testi FAILED");
         }
         Thread.sleep(1000);
+
         //6-  Gift Cards sekmesine basin
-        driver.findElement(By.xpath("//a[text()='Gift Cards']")).click();
-        //7-  Birthday butonuna basin
+        driver.findElement(By.xpath("(//a[@class ='nav-a'])[4]")).click();
+
+        //7-  Birthday butonuna basi//div[@id='a-page'])(
         Thread.sleep(1000);
         driver.findElement(By.xpath("//a[@aria-label='Birthday']")).click();
+
         //8-  Best Seller bolumunden ilk urunu tiklayin
         driver.findElement(By.xpath("(//img[@alt='Amazon.com eGift Card'])[1]")).click();
+
         //9-  Gift card details’den 25 $’i  secin
         driver.findElement(By.xpath("(//button[@id='gc-mini-picker-amount-1' and @value='25'])")).click();
+
         //10-Urun ucretinin 25$ oldugunu test edin
         WebElement ucretElementi = driver.findElement(By.cssSelector("#gc-live-preview-amount"));
         String expectedUcret = "25$";
@@ -48,6 +56,7 @@ public class C03_xpath_cssSelector {
         } else {
             System.out.println("Urun ucret testi FAILED\nActual ucret : " + actualUcret);
         }
+
         //11-Sayfayi kapatin
         Thread.sleep(3000);
         driver.close();
